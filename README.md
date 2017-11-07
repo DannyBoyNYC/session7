@@ -463,9 +463,14 @@ a#pull {
 
 Note that we have a problem in wider screen view - the nav is not showing.
 
-Reset the ul:
+Reset the ul in wide screen view:
 
-```
+```css
+	ul {
+		transform: translateY(-200px);
+		max-height: 1px;
+		opacity: 0;
+		transition: all .3s;
 		@media (min-width: $break-sm){
 			display: flex;
 			justify-content: space-between;
@@ -473,7 +478,9 @@ Reset the ul:
 			text-align: center;
 			transform: translateY(0);
 			max-height: 1000px;
+			opacity: 1;
 		}
+	}
 ```
 
 ## Columns for Content
