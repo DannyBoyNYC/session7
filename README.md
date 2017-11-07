@@ -5,41 +5,10 @@
 1. Install [GIT](https://git-scm.com) on your laptop
 2. Carefully follow the tutorial on [Gituhub](https://try.github.io/levels/1/challenges/1)
 3. Create an account on [Github](https://github.com)
-
 1. Review the process used to set up this project and continue to add JavaScript for the video player.
 
 ![image](wide.png)
 ![image](mobile.png)
-
-
-
-## Tooling
-
-```sh
-$ cd <sessionX>
-$ npm init -y
-$ npm install browser-sync node-sass concurrently --save-dev
-```
-
-Package.json scripts (similar to last week's):
-
-```sh
-  "scripts": {
-    "sassy": "node-sass --watch sass --output app/css --source-map true",
-    "start": "browser-sync start --server 'app' --files 'app'",
-    "boom!": "concurrently \"npm run start\" \"npm run sassy\" "
-  },
-```
-
-`$ npm run boom!`
-
-Note: at this point we are not using SASS but the sassy command is running.
-
-Change the link tag in the html to use `base.css`.
-
-```html
-<link rel="stylesheet" href="css/base.css">
-```
 
 
 ## Header
@@ -73,6 +42,12 @@ header p + p {
 }
 ```
 
+Change the link tag in the html to use `base.css`.
+
+```html
+<link rel="stylesheet" href="css/base.css">
+```
+
 ## Aside - Using an App for SASS Preprocessing
 
 [Syntactically Awesome Style Sheets](https://sass-lang.com) - takes sass files and converts (compiles) them into css. sass [adds features](http://sass-lang.com/guide) to css.
@@ -83,6 +58,28 @@ header p + p {
 [Scout app](https://github.com/scout-app/scout-app/)
 
 For Scout the setup includes creating and input folder for sass and an output folder for css.
+
+## Tooling
+
+```sh
+$ cd <sessionX>
+$ npm init -y
+$ npm install browser-sync node-sass concurrently --save-dev
+```
+
+Add the scripts to your package.json (similar to last week's):
+
+```sh
+  "scripts": {
+    "sassy": "node-sass --watch sass --output app/css --source-map true",
+    "start": "browser-sync start --server 'app' --files 'app'",
+    "boom!": "concurrently \"npm run start\" \"npm run sassy\" "
+  },
+```
+
+`$ npm run boom!`
+
+Note: at this point we are not using SASS but the sassy command is running.
 
 
 ### Set up and nesting

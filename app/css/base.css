@@ -1,4 +1,5 @@
 @import url(reset.css);
+@import url(header.css);
 
 body {
 	font: 100%/1.5 Cambria, Garamond, Georgia, Times, serif;
