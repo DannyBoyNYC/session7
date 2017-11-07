@@ -79,18 +79,15 @@ Add the scripts to your package.json (similar to last week's):
 
 `$ npm run boom!`
 
-Note: at this point we are not using SASS but the sassy command is running.
-
-
 ### Set up and nesting
 
-Save reset.css to `/sass/imports/_reset.scss`
-Save base.css to `/sass/imports/_base.scss`
-Remove the header css from the html and add it to a new file and save it into the imports folder `/sass/imports/_base.scss`
+Move reset.css to and the `sass/imports` folder and rename it `/sass/imports/_reset.scss`
+Move base.css to and the `sass/imports` folder and rename it `/sass/imports/_base.scss`
+Move header.css to and the `sass/imports` folder and rename it `/sass/imports/_header.scss`
 
 Note the underscores in use here as well as the `.scss` extensions.
 
-Note - you will need to remove or comment out the @import statement at the top of this document. Always check for errors by looking at the processes running in the terminal.
+Note - you should remove or comment out the @import statements. Always check for errors by looking at the processes running in the terminal.
 
 Create a new file, styles.scss, in `/sass` and import both the above.
 
@@ -104,7 +101,7 @@ The final `styles.scss` file should look like:
 
 Since we are using SASS includes we can delete the base.css and reset.css files from the css directory.
 
-Refactor the header in `_header.scss` file.
+Refactor the css in `_header.scss` file to use nesting.
 
 ```css
 header {
@@ -228,20 +225,19 @@ header {
 
 ## Responsive Main Nav
 
-Add a link `<a href="#" id="pull"></a>` to show the menu on small screens:
+Note the link `<a href="#" id="pull"></a>` in the nav. We will use this to show a menu on small screens:
 
 ```css
-<nav>
-	<a href="#" id="pull"></a>
-	<ul>
-		<li><a href="#one">Intro</a></li>
-		<li><a href="#two">Summary</a></li>
-		<li><a href="#three">Skills</a></li>
-		<li><a href="#four">Experience</a></li>
-		<li><a href="#five">Education</a></li>
-		<li><a href="#six">Contact</a></li>
-	</ul>
-</nav>
+  <nav>
+    <a href="#" id="pull"></a>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#videos">Videos</a></li>
+      <li><a href="#images">Images</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 ```
 
 Create a sass partial `_navigation.scss` and import it into `styles.css` with `@import 'imports/navigation';`.
@@ -288,7 +284,7 @@ Add media queries for medium and larger screens
 Hide the hamburger on wider screens:
 
 ```css
-a#pull {
+#pull {
 	🔥
 	@media (min-width: $break-sm) {
 		display: none;
@@ -296,7 +292,7 @@ a#pull {
 }
 ```
 
-Show the navigation:
+Show the navigation on large screens:
 
 ```css
 nav {
@@ -312,7 +308,7 @@ nav {
 }
 ```
 
-Can't see the anchor tags:
+Can't see the anchor tags becasue they are the same color as the navbar:
 
 ```css
 nav {
@@ -353,7 +349,6 @@ nav {
 		a {
 		@media (min-width: $break-sm){
 			color: #fff;
-			/*width: 100%;*/
 			display: block;
 			padding: 0.5rem;
 		}
