@@ -490,18 +490,18 @@ Content (effects multiple regions - re-examine the DOM).
 In a new _structure.scss file:
 
 ```css
-.content {
-	max-width: 940px;
+section {
+	max-width: $max-width;
 	margin: 0 auto;
 	padding-bottom: 1.5em;
 }
-.content-main {
+article {
  	box-sizing: border-box;
 	float: left;
 	width: 60%;
 	padding-right: 24px;
 }
-.content-sub {
+aside {
 	float: right;
 	width: 40%;
 }
@@ -510,30 +510,43 @@ In a new _structure.scss file:
 Apply the second breakpoint variable to medium screen sizes and above only:
 
 ```css
-@media (min-width: $break-two) {
-	.content {
-		max-width: 940px;
+@media (min-width: $break-sm) {
+	section {
+		max-width: $max-width;
 		margin: 0 auto;
 		padding-bottom: 1.5em;
 	}
-	.content-main {
-		box-sizing: border-box;
+	article {
+	 	box-sizing: border-box;
 		float: left;
 		width: 60%;
 		padding-right: 24px;
 	}
-	.content-sub {
+	aside {
 		float: right;
 		width: 40%;
 	}
 }
 ```
 
+### Responsive Images
+
+iFrame and images need to expand and contract to fit. 
+
+Note the inline width and height parameters for the iFrame in the HTML.
+
+```css
+img,
+iframe {
+  width: 100%;
+}
+```
+
 ### Box sizing 
 
-The universal approach (applies to all elements):
+Use the universal approach (applies to all elements) in `_base.scss`:
 
-```
+```css
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -541,8 +554,6 @@ html {
   box-sizing: border-box;
 }
 ```
-
-Check and make corrections to the nav.
 
 The Secondary div
 
@@ -567,30 +578,17 @@ The Secondary div
 }
 ```
 
-Add the clearfix to the content and secondary divs
+Add the clearfix to the sections and the .secondary div
 
-`<div class="content clearfix">`
+`<section class="clearfix">`
 
-`<div class="container secondary clearfix">`
-
-### Responsive Images
-
-iFrame and images need to expand and contract to fit. 
-
-Note the inline width and height parameters for the iFrame in the HTML.
-
-```css
-img,
-iframe {
-  width: 100%;
-}
-```
+`<div class="secondary clearfix">`
 
 ### Video Switcher - JavaScript
 
 The old school JavaScript
 
-```
+```js
 $('.content-video a').on('click',function(){
 	$('.content-video a').removeClass('active');
 	$(this).addClass('active');
@@ -601,7 +599,7 @@ $('.content-video a').on('click',function(){
  });
 ```
 
-```
+```js
 const videoLinks = document.querySelectorAll('.content-video a')
 const videoLinksArray = [...videoLinks]
 videoLinksArray.forEach( videoLink => videoLink.addEventListener('click', selectVideo ))
@@ -612,7 +610,7 @@ function selectVideo(){
 }
 ```
 
-```
+```js
 function selectVideo(){
 	const videoToPlay = this.getAttribute('href')
 	console.log(videoToPlay)
@@ -622,7 +620,7 @@ function selectVideo(){
 
 Add the iFrame
 
-```
+```js
 const iFrame = document.querySelector('iframe')
 const videoLinks = document.querySelectorAll('.content-video a')
 const videoLinksArray = [...videoLinks]
@@ -651,7 +649,7 @@ Add css for the active class (for the first video iframe link):
 }
 ```
 
-```
+```js
 const iFrame = document.querySelector('iframe')
 const videoLinks = document.querySelectorAll('.content-video a')
 const videoLinksArray = [...videoLinks]

@@ -58,6 +58,12 @@ a:hover {
   background: #4e7c92;
   color: #fff; }
 
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box; }
+
 header {
   max-width: 940px; }
   header h1 {
@@ -117,8 +123,8 @@ nav a:hover {
 nav #pull {
   display: block;
   background-color: #4e7c92;
-  height: 32px;
-  padding-top: 12px;
+  height: 36px;
+  padding-top: 8px;
   padding-left: 12px; }
   @media (min-width: 480px) {
     nav #pull {
@@ -142,5 +148,39 @@ nav #pull::after {
   opacity: 1; }
   .show-nav nav ul li {
     padding: 1rem; }
+
+@media (min-width: 480px) {
+  section {
+    max-width: 940px;
+    margin: 0 auto;
+    padding-bottom: 1.5em; }
+  article {
+    box-sizing: border-box;
+    float: left;
+    width: 60%;
+    padding-right: 24px; }
+  aside {
+    float: right;
+    width: 40%; } }
+
+img,
+iframe {
+  width: 100%; }
+
+iframe {
+  background-color: #000; }
+
+.secondary {
+  background: #f8f7f3;
+  border: 1px solid #bfbfbf;
+  padding: 1em; }
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
 
 /*# sourceMappingURL=styles.css.map */

@@ -16,3 +16,10 @@ a:hover {
 }
 
 ::selection { background:#4e7c92; color:#fff; }
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+}
