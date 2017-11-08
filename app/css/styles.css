@@ -100,7 +100,11 @@ header p + p {
 }
 
 nav ul {
-  display: none;
+  /*display: none;*/
+  transform: translateY(-200px);
+  max-height: 1px;
+  opacity: 0;
+  transition: all .3s;
 }
 @media (min-width: 480px) {
   nav ul {
@@ -108,10 +112,18 @@ nav ul {
     justify-content: space-around;
     background: #4e7c92;
     text-align: center;
+    transform: translateY(0);
+    max-height: 1000px;
+    opacity: 1;
   }
+}
+nav li {
+  background: #ddd;
+  border-bottom: 1px solid #fff;
 }
 @media (min-width: 480px) {
   nav li {
+    background: #4e7c92;
     flex-grow: 1;
   }
   nav li:hover {
@@ -147,6 +159,18 @@ nav #pull::after {
   height: 22px;
   background-size: cover;
   display: inline-block;
+}
+
+.show-nav nav ul {
+  display: block;
+  width: 100%;
+  position: absolute;
+  transform: translateY(0);
+  max-height: 1000px;
+  opacity: 1;
+}
+.show-nav nav ul li {
+  padding: 1rem;
 }
 
 /*# sourceMappingURL=styles.css.map */

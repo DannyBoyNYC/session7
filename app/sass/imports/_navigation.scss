@@ -1,16 +1,31 @@
 nav {
 	ul {
-		display: none;
+		/*display: none;*/
+
+		transform: translateY(-200px);
+		max-height: 1px;
+		opacity: 0;
+		transition: all .3s;
+
 		@media (min-width: $break-sm){
 			display: flex;
 			justify-content: space-around;
 			background: $link;
 			text-align: center;
+
+			transform: translateY(0);
+			max-height: 1000px;
+			opacity: 1;
+
+
 		}
 	}
 
 	li {
+		background: $light-gray;
+		border-bottom: 1px solid #fff;
 		@media (min-width: $break-sm){
+			background: $link;
 			flex-grow: 1;
 			&:hover {
 				background: $text;
@@ -48,3 +63,43 @@ nav {
 		display: inline-block;
 	}
 }
+
+.show-nav nav ul {
+	display: block;
+	width: 100%;
+	position: absolute;
+
+
+	transform: translateY(0);
+	max-height: 1000px;
+	opacity: 1;
+
+	
+	li {
+		padding: 1rem;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -201,8 +201,40 @@
 </footer>
 
 <script>
+const hamburger = document.querySelector('#pull')
+const body = document.querySelector('body')
 
+hamburger.addEventListener('click', showMenu)
+
+function showMenu(){
+  body.classList.toggle('show-nav')
+  event.preventDefault()
+}
 </script>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
