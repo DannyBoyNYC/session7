@@ -1,29 +1,31 @@
 header {
-	max-width: 940px;
+	max-width: $max-width;
 	margin: 0 auto;
-}
-header h1 {
-	font-size: 3rem;
-}
-header p {
-	font-size: 1.5rem;
-	text-transform: uppercase;
-	line-height: 1.1;
-	margin-bottom: 1rem;
-}
 
-header h1 + p {
-	border-top: 3px double #dbd1b5;
-	padding-top: 1rem;
+	h1 {
+		font-size: 3rem;
+	}
+	p {
+		display: none;
+		color: $med-gray;
+		@media (min-width: $break-sm){
+			display: block;
+			font-size: 1.5rem;
+			text-transform: uppercase;
+			line-height: 1.1;
+			margin-bottom: 1rem;
+		}
+	}
+
+	h1 + p {
+		border-top: 3px double $dk-yellow;
+		padding-top: 1rem;
+	}
+
+	p + p {
+		font-size: 1rem;
+	}
 }
-
-header p + p {
-	font-size: 1rem;
-	color: #666;
-}
-
-
-
 
 
 
