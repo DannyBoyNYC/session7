@@ -409,7 +409,7 @@ Add our scripts at the bottom of the page before the closing body tag:
 </script>
 ```
 
-Add a .showme class to the _navigation.scss:
+Add a .showme class to `_navigation.scss`:
 
 ```css
 .show-nav nav ul {
@@ -510,7 +510,7 @@ Reset the ul in wide screen view:
 
 Content (effects multiple regions - re-examine the DOM).
 
-In a new _structure.scss file:
+In a new `_structure.scss` file:
 
 ```css
 section {
