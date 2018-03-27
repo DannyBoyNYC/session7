@@ -409,7 +409,7 @@ Add our scripts at the bottom of the page before the closing body tag:
 </script>
 ```
 
-Add a .showme class to the `_navigation.scss`:
+Add a .showme class to the `_nav.scss`:
 
 ```css
 .show-nav nav ul {
@@ -570,7 +570,7 @@ iframe {
 
 ## Notes
 
-### Mixins
+Mixins
 
 ```
 @mixin border-radius($radius) {
@@ -582,11 +582,7 @@ iframe {
 $radius: 10px;
 ```
 
-
-Add to the nav and ul
-
-```html
-<nav class="clearfix">
-	<ul class="clearfix">
+```
+@include border-radius;
 ```
 	
