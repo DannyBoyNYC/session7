@@ -4,7 +4,7 @@ Install [Visual Studio Code](https://code.visualstudio.com) now.
 
 ## Homework
 
-1. Review the process used to set up this project and add JavaScript for the video player
+1. Review the hamburger - remove jump on roll up, after click make menu disapppear. Extend menu bar across the page. Make the click area full height and width. CHeck the wide screen view and correct it.
 1. Updload your results to Github and send me a link
 
 ![image](other/wide.png)
